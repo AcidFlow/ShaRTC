@@ -24,22 +24,4 @@
         android:layout_below="@+id/btn_start_server"
         android:layout_alignLeft="@+id/btn_start_server" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Connect to server"
-        android:id="@+id/btn_connect_to_server"
-        android:layout_below="@+id/btn_stop_server"
-        android:layout_alignLeft="@+id/btn_stop_server" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/ip_address"
-        android:layout_below="@+id/btn_connect_to_server"
-        android:layout_alignLeft="@+id/btn_connect_to_server"
-        android:layout_marginTop="26dp" />
-
 </RelativeLayout>

@@ -7,26 +7,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import info.acidflow.shartc.R;
-import info.acidflow.shartc.client.ClientToServerConnection;
 import info.acidflow.shartc.services.SignalisationService;
-import info.acidflow.shartc.utilities.NetworkUtils;
 
 /**
  * Created by acidflow on 27/10/13.
  */
-public class PlaceholderFragment extends Fragment implements View.OnClickListener{
+public class HostServerFragment extends Fragment implements View.OnClickListener{
 
     private View mView;
-    public PlaceholderFragment() {
+    public HostServerFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_main, container, false);
+        mView = inflater.inflate(R.layout.shartc_create_server_fragment, container, false);
         return mView;
     }
 
@@ -34,13 +31,11 @@ public class PlaceholderFragment extends Fragment implements View.OnClickListene
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initializeClickListeners();
-        ((TextView) mView.findViewById(R.id.ip_address)).setText(NetworkUtils.getLocalIpAddress());
     }
 
     private void initializeClickListeners(){
         mView.findViewById(R.id.btn_start_server).setOnClickListener(this);
         mView.findViewById(R.id.btn_stop_server).setOnClickListener(this);
-        mView.findViewById(R.id.btn_connect_to_server).setOnClickListener(this);
     }
 
     @Override
@@ -52,10 +47,6 @@ public class PlaceholderFragment extends Fragment implements View.OnClickListene
 
             case R.id.btn_stop_server:
                 getActivity().stopService(new Intent(getActivity(), SignalisationService.class));
-                break;
-            case R.id.btn_connect_to_server:
-                ClientToServerConnection connection = new ClientToServerConnection("10.0.2.2", 40666);
-                connection.connectToServer();
                 break;
             default:
                 break;

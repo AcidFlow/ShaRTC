@@ -4,5 +4,9 @@
     <string name="app_name">ShaRTC</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="drawer_open_descrition">[DRAWER OPEN]</string>
+    <string name="drawer_close_descrition">[DRAWER CLOSE]</string>
+    <string name="actionbar_title_menu_open">[MENU]</string>
+    <string name="actionbar_title_connect_to_server">[CONNECT TO]</string>
+    <string name="actionbar_title_host">[HOST SERVER]</string>
 </resources>

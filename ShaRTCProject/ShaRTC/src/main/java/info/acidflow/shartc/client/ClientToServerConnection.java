@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 import info.acidflow.shartc.config.Constants;
+import info.acidflow.shartc.exceptions.BadProtocolException;
 import info.acidflow.shartc.protocol.SignalisationProtocol;
 
 /**
@@ -59,7 +60,9 @@ public class ClientToServerConnection {
                 }catch(IOException e){
                     Log.e(Constants.CONFIGURATION.LOG.LOG_TAG, "Error when connecting to server " + mServerIPAddress + ":" + mServerPort);
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e(Constants.CONFIGURATION.LOG.LOG_TAG, "JSON Error" + e.getMessage());
+                }catch (BadProtocolException e){
+                    Log.e(Constants.CONFIGURATION.LOG.LOG_TAG, "BAD PROTOCOL Error" + e.getMessage());
                 }
             }
         }).start();
